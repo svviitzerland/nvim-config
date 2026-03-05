@@ -24,3 +24,16 @@ vim.keymap.set("i", "<S-Right>", "<Esc>v<Right>", { desc = "Select right" })
 vim.keymap.set("n", "<S-Left>", "v<Left>", { desc = "Select left" })
 vim.keymap.set("v", "<S-Left>", "<Left>", { desc = "Select left" })
 vim.keymap.set("i", "<S-Left>", "<Esc>v<Left>", { desc = "Select left" })
+
+-- Move lines up and down with Alt + Up/Down
+vim.keymap.set("n", "<A-Up>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
+vim.keymap.set("n", "<A-Down>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
+vim.keymap.set("i", "<A-Up>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
+vim.keymap.set("i", "<A-Down>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
+vim.keymap.set("v", "<A-Up>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
+vim.keymap.set("v", "<A-Down>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
+
+-- Delete line with Ctrl + k
+vim.keymap.set("n", "<C-k>", "dd", { desc = "Delete Line" })
+vim.keymap.set("i", "<C-k>", "<C-o>dd", { desc = "Delete Line" })
+vim.keymap.set("v", "<C-k>", "d", { desc = "Delete Line" })
